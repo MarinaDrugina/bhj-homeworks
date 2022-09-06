@@ -1,9 +1,13 @@
-let menuLink = document.getElementsByClassName('menu__link');
+const menuLink = document.querySelectorAll('.menu__link');
 
-[].forEach.call(menuLink, (el) => {
-    el.addEventListener('click', (event) => {
-        if(el.closest('a')){
-            el.classList.add('menu_active');
-        }
-    });
+menuLink.forEach((el) => {
+  el.addEventListener('click', (event) => {
+    const menuSub = el.nextElementSibling;
+    if (menuSub) {
+      menuSub.classList.toggle('menu_active');
+      if (menuSub.children.length) {
+        event.preventDefault();
+      }
+    }
+  });
 });

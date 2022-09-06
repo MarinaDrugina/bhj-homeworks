@@ -1,7 +1,7 @@
-let modal = document.getElementsByClassName('modal');
+let modal = document.querySelectorAll('.modal');
 let modalMain = document.getElementById('modal_main');
 let modalSuccess = document.getElementById('modal_success');
-let modalCloseElements = document.getElementsByClassName('modal__close');
+let modalCloseElements = document.querySelectorAll('.modal__close');
 let showingModalSuccess = document.querySelector('.show-success');
 
 modalMain.classList.add('modal_active');
