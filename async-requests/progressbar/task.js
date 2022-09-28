@@ -5,13 +5,13 @@ formElem.addEventListener('submit', (event) => {
 
     const data = new FormData(formElem);
 
-    let xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest();
     
     xhr.upload.onprogress = function(event) {
         const progress = document.getElementById( 'progress' );
-        progress.value = event.loaded;
+        progress.value = event.loaded / event.total;
     }
 
-    xhr.open('POST', 'https://netology-slow-rest.herokuapp.com/upload.php');    
-    xhr.send(data);  
+    xhr.open('POST', 'https://netology-slow-rest.herokuapp.com/upload.php');  
+    xhr.send(data); 
 });
